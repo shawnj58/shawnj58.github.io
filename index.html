@@ -9,7 +9,7 @@
     header { background:#111; position:sticky; top:0; z-index:99; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
     nav a { color:#ff6a00; text-decoration:none; margin:0 1.5rem; font-weight:bold; }
     nav a:hover { color:#fff; text-shadow:0 0 10px #ff6a00; }
-    .hero { height:90vh; background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070') center/cover; display:grid; place-items:center; text-align:center; }
+    .hero { height:90vh; background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat; display:grid; place-items:center; text-align:center; }
     .hero h1 { font-size:5rem; margin:0; text-shadow:0 0 20px #ff6a00; }
     .hero p { font-size:2rem; margin:1rem 0; }
     .btn { background:#ff6a00; color:#000; padding:1rem 2rem; border:none; font-size:1.5rem; font-weight:bold; cursor:pointer; border-radius:50px; box-shadow:0 0 15px #ff6a00; }
@@ -18,6 +18,7 @@
     .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
     .card { background:#222; padding:2rem; border-radius:12px; text-align:center; border:2px solid #ff6a00; transition:.3s; }
     .card:hover { transform:translateY(-10px); box-shadow:0 0 30px #ff6a00; }
+    .card img { width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem; }
     .card h3 { color:#ff6a00; }
     footer { background:#000; text-align:center; padding:2rem; font-size:1.2rem; }
     footer a { color:#ff6a00; text-decoration:none; }
@@ -50,6 +51,7 @@
     <h2 style="text-align:center; color:#ff6a00;">Our Machines</h2>
     <div class="grid">
       <div class="card">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vape vending machine glowing in the dark">
         <h3>Vape Pods</h3>
         <p>50+ flavors, zero bullshit. Pods for every mood—fruity, icy, dessert, whatever.</p>
       </div>
