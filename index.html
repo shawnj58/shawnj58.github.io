@@ -3,32 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SMJ Solutions | Vape & Dip Vending Machines</title>
+  <title>SMJ Solutions | Vape & Dip—No Bullshit</title>
   <style>
-    body { margin:0; font-family: 'Segoe UI', sans-serif; background:#0f0f0f; color:#eee; }
-    header { background:#111; position:sticky; top:0; z-index:99; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
-    nav a { color:#ff6a00; text-decoration:none; margin:0 1.5rem; font-weight:bold; }
-    nav a:hover { color:#fff; text-shadow:0 0 10px #ff6a00; }
-    .hero { height:90vh; background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat; display:grid; place-items:center; text-align:center; }
-    .hero h1 { font-size:5rem; margin:0; text-shadow:0 0 20px #ff6a00; }
-    .hero p { font-size:2rem; margin:1rem 0; }
-    .btn { background:#ff6a00; color:#000; padding:1rem 2rem; border:none; font-size:1.5rem; font-weight:bold; cursor:pointer; border-radius:50px; box-shadow:0 0 15px #ff6a00; }
-    .btn:hover { transform:scale(1.1); }
-    section { padding:4rem 2rem; max-width:1200px; margin:auto; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
-    .card { background:#222; padding:2rem; border-radius:12px; text-align:center; border:2px solid #ff6a00; transition:.3s; }
-    .card:hover { transform:translateY(-10px); box-shadow:0 0 30px #ff6a00; }
-    .card img { width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem; }
-    .card h3 { color:#ff6a00; }
-    footer { background:#000; text-align:center; padding:2rem; font-size:1.2rem; }
+    body { margin:0; font-family: 'Segoe UI', sans-serif; background:#0a0a0a; color:#eee; }
+    header { background:#000; position:sticky; top:0; z-index:99; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #ff6a00; }
+    nav a { color:#ff6a00; text-decoration:none; margin:0 1.8rem; font-weight:900; transition:.3s; }
+    nav a:hover { color:#fff; text-shadow:0 0 15px #ff6a00, 0 0 30px #ff6a00; transform:scale(1.1); }
+    .hero {
+      height:95vh;
+      background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+                  url('https://vapetm.com/cdn/shop/files/2024-10-30_14-45-59.jpg?v=1730308485') center/cover;
+      display:grid; place-items:center; text-align:center;
+      position:relative;
+    }
+    .hero::before {
+      content:"24/7";
+      position:absolute; top:2rem; right:2rem;
+      background:#ff6a00; color:#000; font-weight:bold;
+      padding:0.5rem 1.5rem; border-radius:50px;
+      box-shadow:0 0 20px #ff6a00; animation:pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.7; } }
+    .hero h1 { font-size:6rem; margin:0; text-shadow:0 0 30px #ff6a00, 0 0 60px #ff6a00; letter-spacing:-2px; position:relative; z-index:1; }
+    .hero h1::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width:120%;
+      height:140%;
+      background: url('https://img.freepik.com/premium-vector/vape-smoke-mist-with-light-effects-transparent-gray-background-soft-flowing-texture_220217-8934.jpg?semt=ais_hybrid&w=740&q=80') center/cover;
+      opacity: 0.5;
+      z-index: -1;
+      animation: smoke-float 10s linear infinite;
+    }
+    @keyframes smoke-float {
+      0% { transform: translateY(0) scale(1); opacity: 0.5; }
+      50% { transform: translateY(-20px) scale(1.05); opacity: 0.3; }
+      100% { transform: translateY(-40px) scale(1.1); opacity: 0; }
+    }
+    .hero p { font-size:2.5rem; margin:1rem 0; text-shadow:0 0 15px #ff6a00; }
+    .btn { background:#ff6a00; color:#000; padding:1.2rem 3rem; border:none; font-size:2rem; font-weight:900; cursor:pointer; border-radius:50px; box-shadow:0 0 25px #ff6a00; transition:all .3s; }
+    .btn:hover { transform:scale(1.15) rotate(2deg); background:#ff8c00; box-shadow:0 0 40px #ff6a00; }
+    section { padding:5rem 2rem; max-width:1300px; margin:auto; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:2.5rem; }
+    .card { background:#1a1a1a; padding:2rem; border-radius:16px; text-align:center; border:3px solid #ff6a00; transition:all .4s; box-shadow:0 0 15px rgba(255,106,0,.3); }
+    .card:hover { transform:translateY(-15px) rotate(1deg); box-shadow:0 0 50px #ff6a00; border-color:#fff; }
+    .card img { width:100%; height:220px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; filter:brightness(1.1); }
+    .card h3 { color:#ff6a00; font-size:2rem; text-shadow:0 0 10px #ff6a00; }
+    footer { background:#000; text-align:center; padding:3rem; font-size:1.4rem; border-top:3px solid #ff6a00; }
     footer a { color:#ff6a00; text-decoration:none; }
-    footer a:hover { text-decoration:underline; }
+    footer a:hover { text-shadow:0 0 15px #ff6a00; }
+    #age-gate { position:fixed; inset:0; background:rgba(0,0,0,.98); display:flex; justify-content:center; align-items:center; z-index:9999; }
+    .gate-box { background:#111; padding:4rem; border-radius:20px; text-align:center; border:4px solid #ff6a00; max-width:500px; box-shadow:0 0 40px #ff6a00; }
+    .gate-box h2 { color:#ff6a00; font-size:4rem; margin:0 0 1.5rem; text-shadow:0 0 20px #ff6a00; }
+    .gate-box p { font-size:2rem; margin:0 0 3rem; }
+    .gate-btn { background:#ff6a00; color:#000; padding:1.2rem 4rem; border:none; font-size:2rem; font-weight:900; border-radius:50px; cursor:pointer; margin:1rem; transition:.3s; }
+    .gate-btn:hover { transform:scale(1.1); box-shadow:0 0 30px #ff6a00; }
+    .gate-btn.no { background:#444; color:#eee; }
   </style>
 </head>
 <body>
-
+  <!-- 21+ Age Gate -->
+  <div id="age-gate">
+    <div class="gate-box">
+      <h2>21+ ONLY</h2>
+      <p>Are you old enough to be here?</p>
+      <button class="gate-btn" onclick="document.getElementById('age-gate').style.display='none'">Yes</button>
+      <button class="gate-btn no" onclick="alert('Fuck off, kid. Come back when you can buy beer.')">No</button>
+    </div>
+  </div>
   <header>
-    <h2 style="margin:0; color:#ff6a00;">SMJ Solutions</h2>
+    <h2 style="margin:0; color:#ff6a00; font-size:2.8rem; text-shadow:0 0 15px #ff6a00;">SMJ Solutions</h2>
     <nav>
       <a href="#home">Home</a>
       <a href="#machines">Machines</a>
@@ -38,58 +84,52 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <div class="hero" id="home">
     <div>
       <h1>Grab. Puff. Dip. Repeat.</h1>
       <p>24/7. No judgment. No lines.</p>
-      <button class="btn" onclick="alert('Yeah, we know you want one—email us.')">Find a Machine</button>
+      <button class="btn" onclick="alert('Yeah, we know you want one—email us, pussy.')">Find a Machine</button>
     </div>
   </div>
-
   <section id="machines">
-    <h2 style="text-align:center; color:#ff6a00;">Our Machines</h2>
+    <h2 style="text-align:center; color:#ff6a00; font-size:3rem; text-shadow:0 0 20px #ff6a00;">Our Machines</h2>
     <div class="grid">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vape vending machine glowing in the dark">
+        <img src="https://media.gettyimages.com/id/1241480916/photo/elf-bar-disposable-vape-flavored-vaping-e-cigarette-products-are-displayed-in-a-convenience.jpg?s=612x612&w=0&k=20&c=vygfNwSjrZ1UHE2XPXyLB7r-3WkKopDxM5jw8lek-PM=" alt="Elf Bar Disposable Vapes Display">
         <h3>Vape Pods</h3>
         <p>50+ flavors, zero bullshit. Pods for every mood—fruity, icy, dessert, whatever.</p>
       </div>
       <div class="card">
+        <img src="https://media.gettyimages.com/id/1244575423/photo/zyn-smokeless-nicotine-pouches-at-the-swedish-match-ab-concept-store-in-central-stockholm.jpg?s=612x612&w=0&k=20&c=00pjsTy2fYnetdT04uLPK_LsQXZr4VsiJSOqYMTJHdI=" alt="ZYN Nicotine Pouches">
         <h3>Dip Pouches</h3>
-        <p>Mint, Wintergreen, straight tobacco—whatever gets you through Monday.</p>
+        <p>Mint, Wintergreen, straight tobacco—whatever keeps your jaw busy.</p>
       </div>
       <div class="card">
         <h3>Own One</h3>
-        <p>Want your own machine? We’ll stock it, you profit. Hit us up.</p>
+        <p>Want your own? We stock it, you cash. Hit us up—don't pussyfoot.</p>
       </div>
     </div>
   </section>
-
   <section id="flavors">
-    <h2 style="text-align:center; color:#ff6a00;">Flavors We Stock</h2>
-    <p style="text-align:center;">Mango Ice • Blueberry Mint • Tobacco Gold • Peach Ring • Menthol Blast • Cinnamon Roll • Wintergreen Kick • Strawberry Cream • and 40 more. Ask for custom.</p>
+    <h2 style="text-align:center; color:#ff6a00; font-size:3rem;">Flavors We Stock</h2>
+    <p style="text-align:center; font-size:1.6rem;">Mango Ice • Blueberry Mint • Tobacco Gold • Peach Ring • Menthol Blast • Cinnamon Roll • Wintergreen Kick • Strawberry Cream • 40+ more. Ask for custom—don't be lame.</p>
   </section>
-
   <section id="locations">
-    <h2 style="text-align:center; color:#ff6a00;">Where We’re At</h2>
-    <p style="text-align:center;">Gas stations, bars, truck stops, college dorms—anywhere people need a fix. Drop us a line for your spot.</p>
+    <h2 style="text-align:center; color:#ff6a00; font-size:3rem;">Where We’re At</h2>
+    <p style="text-align:center; font-size:1.6rem;">Gas stations, bars, truck stops, dorms—anywhere people need a hit. Want yours? Hit us.</p>
   </section>
-
   <section id="wholesale">
-    <h2 style="text-align:center; color:#ff6a00;">Wholesale & Bulk</h2>
-    <p style="text-align:center;">Stocking your own machines? We do bulk pods, pouches, even full refills. Email for pricing—don’t be shy.</p>
+    <h2 style="text-align:center; color:#ff6a00; font-size:3rem;">Wholesale & Bulk</h2>
+    <p style="text-align:center; font-size:1.6rem;">Bulk pods, pouches, full refills. Email for deals—don’t lowball us, asshole.</p>
   </section>
-
   <section id="contact">
-    <h2 style="text-align:center; color:#ff6a00;">Get In Touch</h2>
-    <p style="text-align:center; font-size:1.8rem;">smjsolutionsllc@outlook.com</p>
-    <p style="text-align:center;">Tell us what you need—machines, flavors, locations, or just wanna bitch about life. We’ll reply fast.</p>
+    <h2 style="text-align:center; color:#ff6a00; font-size:3rem;">Get In Touch</h2>
+    <p style="text-align:center; font-size:2.2rem;"><a href="mailto:smjsolutionsllc@outlook.com">smjsolutionsllc@outlook.com</a></p>
+    <p style="text-align:center; font-size:1.6rem;">Machines. Flavors. Locations. Or just vent. We read everything—bring it.</p>
   </section>
-
   <footer>
-    <p>SMJ Solutions LLC • <a href="mailto:smjsolutionsllc@outlook.com">smjsolutionsllc@outlook.com</a> • Fuck yeah, we’re open 24/7</p>
+    <p>SMJ Solutions LLC • <a href="mailto:smjsolutionsllc@outlook.com">smjsolutionsllc@outlook.com</a> • 24/7—no sleep, no rules</p>
+    <p style="font-size:1rem; color:#666;">No Mom Allowed</p>
   </footer>
-
 </body>
 </html>
